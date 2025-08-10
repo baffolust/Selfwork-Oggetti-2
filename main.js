@@ -34,6 +34,28 @@ let rubrica = {
             console.log(`${nome_contatto} non presente in rubrica`);
             
         }
+    },
+
+    eliminaContatto : function(nome_contatto){
+
+        let index = this.contatti.findIndex((contatto)=>contatto.Nome == nome_contatto);
+        
+        if ( index != -1){
+
+            this.contatti.splice(index, 1);
+            console.log(`${nome_contatto} eliminato dalla rubrica`);
+            
+        } else {
+
+            console.log(`${nome_contatto} non presente in rubrica`);
+            
+        }
+
+        
+
+        
+        
+
     }
     
     
@@ -48,3 +70,6 @@ let rubrica = {
 rubrica.mostraContatti();
 rubrica.mostraContatto('Simone');
 rubrica.mostraContatto('Superman');
+rubrica.eliminaContatto('Simone');
+rubrica.mostraContatti();
+rubrica.eliminaContatto('Superman');
